@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="QuickFIXn.FIX44" Version="1.14.0" />
+  </ItemGroup>
+
 </Project>

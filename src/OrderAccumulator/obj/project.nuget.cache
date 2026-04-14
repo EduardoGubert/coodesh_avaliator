@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5iY5dRFQCu8=",
+  "dgSpecHash": "+95z63cvUE0=",
   "success": true,
   "projectFilePath": "C:\\Users\\eduar\\OneDrive\\Documentos\\Projetos\\teste-tecnico\\Teste_tecnico_manual_coodesh\\coodesh_avaliator\\src\\OrderAccumulator\\OrderAccumulator.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\eduar\\.nuget\\packages\\quickfixn.core\\1.14.0\\quickfixn.core.1.14.0.nupkg.sha512",
+    "C:\\Users\\eduar\\.nuget\\packages\\quickfixn.fix44\\1.14.0\\quickfixn.fix44.1.14.0.nupkg.sha512"
+  ],
   "logs": []
 }

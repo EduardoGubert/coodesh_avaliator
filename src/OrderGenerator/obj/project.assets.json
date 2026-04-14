@@ -1,11 +1,72 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "QuickFIXn.Core/1.14.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/QuickFix.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/QuickFix.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "QuickFIXn.FIX44/1.14.0": {
+        "type": "package",
+        "dependencies": {
+          "QuickFIXn.Core": "1.14.0"
+        },
+        "compile": {
+          "lib/net8.0/QuickFix.FIX44.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/QuickFix.FIX44.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "QuickFIXn.Core/1.14.0": {
+      "sha512": "S58odWkiY4HYKSEpkZ/WXBsUrmr9EOuvzVq8HYl7cVKvU/4umJ0LZQ136/oxhDNOZGLMtdntxSzZN2ZcyoWvcA==",
+      "type": "package",
+      "path": "quickfixn.core/1.14.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "lib/net8.0/QuickFix.dll",
+        "lib/net8.0/QuickFix.xml",
+        "qfn-icon.png",
+        "quickfixn.core.1.14.0.nupkg.sha512",
+        "quickfixn.core.nuspec"
+      ]
+    },
+    "QuickFIXn.FIX44/1.14.0": {
+      "sha512": "Lnc8WDvJX5hBtLQfkA8obHiLSgsCnEQZb37xVo3Q2IPvGhjuB326I4Bg7C5kYBC61q3AGJUCPBPRktgKaUpPGw==",
+      "type": "package",
+      "path": "quickfixn.fix44/1.14.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "DataDictionary/FIX44.xml",
+        "LICENSE",
+        "README.md",
+        "lib/net8.0/QuickFix.FIX44.dll",
+        "qfn-icon.png",
+        "quickfixn.fix44.1.14.0.nupkg.sha512",
+        "quickfixn.fix44.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "QuickFIXn.FIX44 >= 1.14.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\eduar\\.nuget\\packages\\": {}
@@ -50,6 +111,12 @@
     "frameworks": {
       "net10.0": {
         "targetAlias": "net10.0",
+        "dependencies": {
+          "QuickFIXn.FIX44": {
+            "target": "Package",
+            "version": "[1.14.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
