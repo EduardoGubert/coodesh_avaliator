@@ -1,0 +1,18 @@
+## .NET
+bin/
+obj/
+
+.vs/
+
+
+## NuGet
+
+
+## FIX store/log
+store/
+log/
+
+
+## Node
+node_modules/
+dist/
