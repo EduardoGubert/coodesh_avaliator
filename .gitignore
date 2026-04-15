@@ -1,12 +1,31 @@
 ## .NET
 bin/
 obj/
-
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
 .vs/
-
+*.DotSettings.user
+*.csproj.user
 
 ## NuGet
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
 
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
 
 ## FIX store/log
 store/
@@ -16,3 +35,15 @@ log/
 ## Node
 node_modules/
 dist/
+
+
+## IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+
+## OS
+Thumbs.db
+.DS_Store
