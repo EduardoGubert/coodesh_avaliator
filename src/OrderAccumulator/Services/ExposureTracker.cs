@@ -1,6 +1,6 @@
 using System.Collections.Concurrent;
-using OrderAccumulator.Enums;
 using OrderAccumulator.Interfaces;
+using QuickFix.Fields;
 
 namespace OrderAccumulator.Services;
 
@@ -14,19 +14,19 @@ public class ExposureTracker : IExposureTracker
         _logger = logger;
     }
 
-    public void Record(string symbol, OrderSide side, decimal quantity, decimal price)
+    public void Record(string symbol, Side side, decimal quantity, decimal price)
     {
         var amount = quantity * price;
 
         var exposure = _exposures.AddOrUpdate(
             symbol,
-            side == OrderSide.Buy ? amount : -amount,
-            (_, current) => side == OrderSide.Buy ? current + amount : current - amount
+            side.Value == Side.BUY ? amount : -amount,
+            (_, current) => side.Value == Side.BUY ? current + amount : current - amount
         );
 
         _logger.LogInformation(
             "Recorded {Side} {Quantity} {Symbol} @ {Price} | Amount: {Amount} | Exposure: {Exposure}",
-            side == OrderSide.Buy ? "BUY" : "SELL",
+            side.Value == Side.BUY ? "BUY" : "SELL",
             quantity,
             symbol,
             price,

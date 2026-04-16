@@ -1,9 +1,9 @@
-using OrderAccumulator.Enums;
+using QuickFix.Fields;
 
 namespace OrderAccumulator.Interfaces;
 
 public interface IExposureTracker
 {
-    void Record(string symbol, OrderSide side, decimal quantity, decimal price);
+    void Record(string symbol, Side side, decimal quantity, decimal price);
     IReadOnlyDictionary<string, decimal> GetExposures();
 }

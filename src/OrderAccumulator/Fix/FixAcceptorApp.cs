@@ -49,14 +49,14 @@ public class FixAcceptorApp : MessageCracker, IApplication
         {
             var clOrdId = order.ClOrdID.Value;
             var symbol = order.Symbol.Value;
-            OrderSide side = (OrderSide)order.Side.Value;
+            var side = order.Side;
             var orderQty = order.OrderQty.Value;
             var price = order.Price.Value;
 
             _logger.LogInformation(
                 "Received NewOrderSingle {ClOrdId}: {Side} {Qty} {Symbol} @ {Price}",
                 clOrdId,
-                side == OrderSide.Buy ? "BUY" : "SELL",
+                side.Value == Side.BUY ? "BUY" : "SELL",
                 orderQty,
                 symbol,
                 price
